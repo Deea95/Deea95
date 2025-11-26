@@ -8,14 +8,14 @@
 ---
 
 ## 🧰 Tech & Focus
-Java • JavaFX • SQL (Oracle / SQL Server / MySQL) • Spring Boot • JavaScript • Python • C# • CSS
+Java • JavaFX • SQL • Spring Boot • JavaScript • Python • C# • CSS
 
 ---
 
-## 📊 Quick Stats
-![Profile Views](https://img.shields.io/badge/Profile-Views-blue?style=for-the-badge)
-![Total Repos](https://img.shields.io/badge/Repos-XX-green?style=for-the-badge)
-![Followers](https://img.shields.io/badge/Followers-XX-orange?style=for-the-badge)
+## 📊 Stats (generated)
+![Commits per month](./.github/stats/commits_per_month.png)
+![Top Languages](./.github/stats/top_languages.png)
+![Top Repos](./.github/stats/top_repos.png)
 
 ---
 
@@ -24,13 +24,6 @@ Java • JavaFX • SQL (Oracle / SQL Server / MySQL) • Spring Boot • JavaSc
 - **Calculator_GUI**, **Calculator_Modern**, **JavaApplicationsUdemy** — Java/JavaFX practice  
 - **webDevApplicationsGood** — JavaScript / web experiments  
 - **Calculator_GUI** (Python) — proiect recent
-
----
-
-## 🔥 My Activity
-- Active in **Java, SQL & web projects**  
-- Focused on **banking apps and analysis**  
-- Always learning new things! 💻
 
 ---
 
