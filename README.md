@@ -7,27 +7,30 @@
 
 ---
 
-## 🧰 Tech & Focalizare
+## 🧰 Tech & Focus
 Java • JavaFX • SQL (Oracle / SQL Server / MySQL) • Spring Boot • JavaScript • Python • C# • CSS
 
 ---
 
-## 📊 GitHub Stats
-![GitHub Stats](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Deea95&theme=radical)
-
-## 🧩 Top Languages
-![Top Languages](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Deea95&theme=radical)
-
-## 🔥 Streak / Activity
-![GitHub Streak](https://streak-stats.demolab.com?user=Deea95&theme=radical&hide_border=true)
+## 📊 Quick Stats
+![Profile Views](https://img.shields.io/badge/Profile-Views-blue?style=for-the-badge)
+![Total Repos](https://img.shields.io/badge/Repos-XX-green?style=for-the-badge)
+![Followers](https://img.shields.io/badge/Followers-XX-orange?style=for-the-badge)
 
 ---
 
-## ⭐ Repo highlights
+## ⭐ Repo Highlights
 - **LinkAcademy-Project** — Java, proiect final  
 - **Calculator_GUI**, **Calculator_Modern**, **JavaApplicationsUdemy** — Java/JavaFX practice  
 - **webDevApplicationsGood** — JavaScript / web experiments  
 - **Calculator_GUI** (Python) — proiect recent
+
+---
+
+## 🔥 My Activity
+- Active in **Java, SQL & web projects**  
+- Focused on **banking apps and analysis**  
+- Always learning new things! 💻
 
 ---
 
