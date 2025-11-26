@@ -12,14 +12,14 @@ Java • JavaFX • SQL (Oracle / SQL Server / MySQL) • Spring Boot • JavaSc
 
 ---
 
-## 📊 GitHub Stats (funcționează)
+## 📊 GitHub Stats
 ![GitHub Stats](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Deea95&theme=radical)
 
-## 🧩 Top Languages (funcționează)
+## 🧩 Top Languages
 ![Top Languages](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Deea95&theme=radical)
 
-## 🔥 Contributions / Activity
-![GitHub Contributions](https://activity-graph.herokuapp.com/graph?username=Deea95&theme=react-dark&area=true)
+## 🔥 Streak / Activity
+![GitHub Streak](https://streak-stats.demolab.com?user=Deea95&theme=radical&hide_border=true)
 
 ---
 
