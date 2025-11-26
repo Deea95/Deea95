@@ -1,0 +1,33 @@
+name: Generate GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # zilnic la 02:00 UTC
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install requests matplotlib
+
+      - name: Generate stats
+        run: python scripts/generate_stats.py
+
+      - name: Commit stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/stats/
+          git commit -m "Update generated stats" || echo "No changes"
+          git push
