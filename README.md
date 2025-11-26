@@ -12,14 +12,14 @@ Java • JavaFX • SQL (Oracle / SQL Server / MySQL) • Spring Boot • JavaSc
 
 ---
 
-## 📊 GitHub Stats
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Deea95&show_icons=true&count_private=false&theme=tokyonight&hide=contribs)
+## 📊 GitHub Stats (funcționează)
+![GitHub Stats](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Deea95&theme=radical)
 
-## 🧩 Top Languages
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Deea95&layout=compact&theme=tokyonight)
+## 🧩 Top Languages (funcționează)
+![Top Languages](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Deea95&theme=radical)
 
-## 🔥 Activity Graph
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Deea95&theme=react-dark&area=true)
+## 🔥 Contributions / Activity
+![GitHub Contributions](https://activity-graph.herokuapp.com/graph?username=Deea95&theme=react-dark&area=true)
 
 ---
 
@@ -28,13 +28,6 @@ Java • JavaFX • SQL (Oracle / SQL Server / MySQL) • Spring Boot • JavaSc
 - **Calculator_GUI**, **Calculator_Modern**, **JavaApplicationsUdemy** — Java/JavaFX practice  
 - **webDevApplicationsGood** — JavaScript / web experiments  
 - **Calculator_GUI** (Python) — proiect recent
-
----
-
-## 🛠 PRO Features (optional)
-- Grafice generate automat PNG (commits, limbaje, top repos)  
-- Streaks reale și activity heatmap  
-- Poți adăuga badges personalizate pentru proiecte, commits și top limbaje  
 
 ---
 
