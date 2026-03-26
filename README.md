@@ -1,30 +1,52 @@
-# Hi there 👋 I'm Andreea (Deea95)
+# 👋 Hey, I'm Andreea (Deea95)
 
-> Software Engineer • Java / SQL / JavaFX • Banking projects • București
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andreea-valentina-iote-135181152/)
-[![GitHub followers](https://img.shields.io/github/followers/Deea95?style=social)](https://github.com/Deea95)
-
----
-
-## 🧰 Tech & Focus
-Java • JavaFX • SQL • Spring Boot • JavaScript • Python • C# • CSS
+💻 Software Engineer  
+🏦 Banking Projects  
+📍 București  
 
 ---
 
-## 📊 Stats (generated)
-![Commits per month](./.github/stats/commits_per_month.png)
-![Top Languages](./.github/stats/top_languages.png)
-![Top Repos](./.github/stats/top_repos.png)
+## 🚀 About Me
+- 💡 Lucrez cu **Java & SQL** pe proiecte bancare
+- 🖥️ Îmi plac aplicațiile desktop (**JavaFX**)
+- 📊 Fac analize pe date și diferențe de solduri
+- ⚡ Prefer cod simplu, clar, fără complicații inutile
 
 ---
 
-## ⭐ Repo Highlights
-- **LinkAcademy-Project** — Java, proiect final  
-- **Calculator_GUI**, **Calculator_Modern**, **JavaApplicationsUdemy** — Java/JavaFX practice  
-- **webDevApplicationsGood** — JavaScript / web experiments  
-- **Calculator_GUI** (Python) — proiect recent
+## 🧰 Tech Stack
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=java,spring,js,python,cs,mysql,css" />
+</p>
 
 ---
 
-That's me on GitHub 💙
+## 📊 GitHub Stats
+<p align="center">
+  <img src="./.github/stats/commits_per_month.png" width="30%" />
+  <img src="./.github/stats/top_languages.png" width="30%" />
+  <img src="./.github/stats/top_repos.png" width="30%" />
+</p>
+
+---
+
+## ⭐ Featured Projects
+- 🔹 **LinkAcademy-Project** — aplicație Java (proiect final)  
+- 🔹 **Calculator_GUI / Calculator_Modern** — UI cu JavaFX  
+- 🔹 **JavaApplicationsUdemy** — exerciții & practică  
+- 🔹 **webDevApplicationsGood** — experimente JS  
+- 🔹 **Calculator_GUI (Python)** — proiect recent  
+
+---
+
+## 🌐 Connect with me
+<p align="left">
+  <a href="https://www.linkedin.com/in/andreea-valentina-iote-135181152/">
+    <img src="https://skillicons.dev/icons?i=linkedin" />
+  </a>
+</p>
+
+---
+
+## ✨ Fun Fact
+> "Keep it simple. SQL clean, logic clear." 💙
