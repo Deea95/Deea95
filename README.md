@@ -53,24 +53,24 @@
 
 ---
 
-## 🚀 Featured Project — Price Comparison App 💰
+## 🚀 Featured Project — Data Processing 🔒
 
-- 🔹 Price comparison & analysis tool  
-- 🔹 Detects differences between periods or data sources  
-- 🔹 Focus on **clean data & clear logic**  
-- 🔹 Useful for financial analysis and reporting  
+- 🔹 Advanced **data processing & price comparison tool**  
+- 🔹 Detects differences between datasets / reporting periods  
+- 🔹 Built with **Java & SQL**  
+- 🔹 Focus on **clean data, accuracy, and performance**  
+- 🔹 Inspired by real-world **banking workflows**  
 
-> ⚡ Inspired by real banking workflows
+> 🔒 Private repository — internal / personal project
 
 ---
 
-## ⭐ Projects
-- 🔹 **Price Comparison App** — price analysis & differences detection (Java / SQL)  
-- 🔹 **LinkAcademy-Project** — Java final project  
-- 🔹 **Calculator_GUI / Calculator_Modern** — JavaFX UI apps  
-- 🔹 **JavaApplicationsUdemy** — Java practice  
-- 🔹 **webDevApplicationsGood** — JavaScript experiments  
-- 🔹 **Calculator_GUI (Python)** — recent project  
+## ⭐ Other Projects
+- 🔹 **LinkAcademy-Project** *(Java)* — final application project  
+- 🔹 **Calculator Apps** *(JavaFX)* — multiple UI implementations  
+- 🔹 **JavaApplicationsUdemy** *(Java)* — practice & exercises  
+- 🔹 **webDevApplicationsGood** *(JavaScript)* — web experiments  
+- 🔹 **Calculator_GUI (Python)** *(Python)* — recent project  
 
 ---
 
