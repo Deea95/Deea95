@@ -2,15 +2,15 @@
 
 💻 Software Engineer  
 🏦 Banking Projects  
-📍 București  
+📍 Bucharest, Romania  
 
 ---
 
 ## 🚀 About Me
-- 💡 Lucrez cu **Java & SQL** pe proiecte bancare
-- 🖥️ Îmi plac aplicațiile desktop (**JavaFX**)
-- 📊 Analize pe conturi & diferențe de solduri
-- ⚡ Cod curat, simplu, fără hardcodări inutile
+- 💡 I work with **Java & SQL** on banking projects  
+- 🖥️ I enjoy building desktop applications using **JavaFX**  
+- 📊 Experienced in account analysis & balance reconciliation  
+- ⚡ I prefer clean, simple code with no unnecessary complexity  
 
 ---
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 📊 GitHub Stats (Live)
+## 📊 GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Deea95&show_icons=true&theme=tokyonight&hide_border=true" height="160"/>
@@ -41,19 +41,36 @@
 
 ---
 
-## ⭐ Featured Projects
-- 🔹 **LinkAcademy-Project** — aplicație Java (proiect final)  
-- 🔹 **Calculator_GUI / Calculator_Modern** — JavaFX UI  
-- 🔹 **JavaApplicationsUdemy** — practică Java  
-- 🔹 **webDevApplicationsGood** — experimente JS  
-- 🔹 **Calculator_GUI (Python)** — proiect recent  
+## 🏆 Achievements
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Deea95&theme=tokyonight&no-frame=true&row=1&column=6"/>
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Deea95&theme=tokyonight"/>
+</p>
 
 ---
 
-## 🏆 Achievements
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Deea95&theme=tokyonight&no-frame=true&row=1"/>
-</p>
+## 🚀 Featured Project — Price Comparison App 💰
+
+- 🔹 Price comparison & analysis tool  
+- 🔹 Detects differences between periods or data sources  
+- 🔹 Focus on **clean data & clear logic**  
+- 🔹 Useful for financial analysis and reporting  
+
+> ⚡ Inspired by real banking workflows
+
+---
+
+## ⭐ Projects
+- 🔹 **Price Comparison App** — price analysis & differences detection (Java / SQL)  
+- 🔹 **LinkAcademy-Project** — Java final project  
+- 🔹 **Calculator_GUI / Calculator_Modern** — JavaFX UI apps  
+- 🔹 **JavaApplicationsUdemy** — Java practice  
+- 🔹 **webDevApplicationsGood** — JavaScript experiments  
+- 🔹 **Calculator_GUI (Python)** — recent project  
 
 ---
 
