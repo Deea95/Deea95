@@ -37,7 +37,7 @@
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=Deea95&theme=tokyonight&hide_border=true" height="160"/>
+  <img src="https://github-readme-streak-stats-eight.vercel.app?user=Deea95&theme=tokyonight&hide_border=true" height="160"/>
 </p>
 
 > 🔄 Graficele de mai sus sunt generate automat de <code>generate_stats.py</code> — actualizează-le local sau printr-un GitHub Action ca să rămână la zi.
@@ -55,7 +55,7 @@
 ## 🏆 Achievements
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Deea95&theme=tokyonight&no-frame=true&row=1&column=6"/>
+  <img src="https://github-profile-trophy-liard-delta.vercel.app/?username=Deea95&theme=tokyonight&no-frame=true&row=1&column=6"/>
 </p>
 
 <p align="center">
