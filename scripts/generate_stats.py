@@ -10,10 +10,13 @@ USERNAME = "Deea95"
 OUTPUT_DIR = ".github/stats"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Optional: pune-ți un GitHub token în variabila de mediu GH_TOKEN
-# ca să eviți rate-limit-ul și să poți lua commit-uri reale via GraphQL.
+# Optional: pune-ti un GitHub token in variabila de mediu GH_TOKEN
+# ca sa eviti rate-limit-ul si sa poti lua commit-uri reale via GraphQL.
 GH_TOKEN = os.environ.get("GH_TOKEN")
 HEADERS = {"Authorization": f"token {GH_TOKEN}"} if GH_TOKEN else {}
+
+if not GH_TOKEN:
+    print("⚠️  GH_TOKEN nu este setat — se folosesc cereri neautentificate (rate-limit redus).")
 
 # ---------------------------------------------------------------
 # 🎨 THEME "GitHub Dark Modern"
@@ -55,7 +58,7 @@ def style_ax(ax, title):
 
 
 def rounded_bars(ax, x, heights, color, horizontal=False):
-    """Bare cu colțuri rotunjite, stil modern (tip GitHub contribution cards)."""
+    """Bare cu colturi rotunjite, stil modern (tip GitHub contribution cards)."""
     for i, (xi, h) in enumerate(zip(x, heights)):
         c = color[i] if isinstance(color, list) else color
         if horizontal:
@@ -76,10 +79,17 @@ def rounded_bars(ax, x, heights, color, horizontal=False):
 # 1️⃣ Date repo-uri
 # ---------------------------------------------------------------
 repos_url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100"
-repos = requests.get(repos_url, headers=HEADERS).json()
+resp = requests.get(repos_url, headers=HEADERS)
+
+if resp.status_code != 200:
+    raise RuntimeError(
+        f"GitHub API a returnat eroare {resp.status_code} pentru {repos_url}: {resp.text}"
+    )
+
+repos = resp.json()
 
 if not isinstance(repos, list):
-    raise RuntimeError(f"Răspuns neașteptat de la GitHub API: {repos}")
+    raise RuntimeError(f"Raspuns neasteptat de la GitHub API: {repos}")
 
 # ---------------------------------------------------------------
 # 📊 Top limbaje
@@ -89,46 +99,52 @@ lang_count = Counter(languages).most_common(8)
 labels = [l for l, _ in lang_count]
 values = [v for _, v in lang_count]
 
-fig, ax = plt.subplots(figsize=(8, 5))
-x_pos = range(len(labels))
-rounded_bars(ax, x_pos, values, PALETTE)
-ax.set_xlim(-0.6, len(labels) - 0.4)
-ax.set_ylim(0, max(values) * 1.2)
-ax.set_xticks(list(x_pos))
-ax.set_xticklabels(labels, rotation=20, ha="right")
-for xi, v in zip(x_pos, values):
-    ax.text(xi, v + max(values) * 0.03, str(v), ha="center", color="white", fontsize=10, fontweight="bold")
-style_ax(ax, "🧠 Top Languages")
-plt.tight_layout()
-plt.savefig(f"{OUTPUT_DIR}/top_languages.png", dpi=150)
-plt.close()
+if labels:
+    fig, ax = plt.subplots(figsize=(8, 5))
+    x_pos = range(len(labels))
+    rounded_bars(ax, x_pos, values, PALETTE)
+    ax.set_xlim(-0.6, len(labels) - 0.4)
+    ax.set_ylim(0, max(values) * 1.2)
+    ax.set_xticks(list(x_pos))
+    ax.set_xticklabels(labels, rotation=20, ha="right")
+    for xi, v in zip(x_pos, values):
+        ax.text(xi, v + max(values) * 0.03, str(v), ha="center", color="white", fontsize=10, fontweight="bold")
+    style_ax(ax, "Top Languages")
+    plt.tight_layout()
+    plt.savefig(f"{OUTPUT_DIR}/top_languages.png", dpi=150)
+    plt.close()
+else:
+    print("⚠️  Niciun limbaj gasit — se sare peste top_languages.png")
 
 # ---------------------------------------------------------------
-# ⭐ Top repos după stele
+# ⭐ Top repos dupa stele
 # ---------------------------------------------------------------
 repos_sorted = sorted(repos, key=lambda r: r["stargazers_count"], reverse=True)[:5]
 names = [r["name"] for r in repos_sorted][::-1]
 stars = [r["stargazers_count"] for r in repos_sorted][::-1]
 
-fig, ax = plt.subplots(figsize=(8, 5))
-y_pos = range(len(names))
-rounded_bars(ax, y_pos, stars, ACCENT_BLUE, horizontal=True)
-ax.set_ylim(-0.6, len(names) - 0.4)
-ax.set_xlim(0, max(stars, default=1) * 1.25 or 1)
-ax.set_yticks(list(y_pos))
-ax.set_yticklabels(names)
-for yi, s in zip(y_pos, stars):
-    ax.text(s + max(stars, default=1) * 0.03, yi, f"⭐ {s}", va="center", color="white", fontsize=10, fontweight="bold")
-style_ax(ax, "⭐ Top Repos by Stars")
-plt.tight_layout()
-plt.savefig(f"{OUTPUT_DIR}/top_repos.png", dpi=150)
-plt.close()
+if names:
+    fig, ax = plt.subplots(figsize=(8, 5))
+    y_pos = range(len(names))
+    rounded_bars(ax, y_pos, stars, ACCENT_BLUE, horizontal=True)
+    ax.set_ylim(-0.6, len(names) - 0.4)
+    ax.set_xlim(0, max(stars, default=1) * 1.25 or 1)
+    ax.set_yticks(list(y_pos))
+    ax.set_yticklabels(names)
+    for yi, s in zip(y_pos, stars):
+        ax.text(s + max(stars, default=1) * 0.03, yi, f"{s} stele", va="center", color="white", fontsize=10, fontweight="bold")
+    style_ax(ax, "Top Repos by Stars")
+    plt.tight_layout()
+    plt.savefig(f"{OUTPUT_DIR}/top_repos.png", dpi=150)
+    plt.close()
+else:
+    print("⚠️  Niciun repo gasit — se sare peste top_repos.png")
 
 # ---------------------------------------------------------------
 # 📈 Commits per month
 # ---------------------------------------------------------------
 def get_real_commit_counts(username, token):
-    """Ia numărul de contribuții per lună din ultimul an via GraphQL, dacă avem token."""
+    """Ia numarul de contributii per luna din ultimele 365 de zile via GraphQL, daca avem token."""
     if not token:
         return None
     query = """
@@ -153,8 +169,12 @@ def get_real_commit_counts(username, token):
         headers={"Authorization": f"bearer {token}"},
     )
     if resp.status_code != 200:
+        print(f"⚠️  GraphQL a returnat {resp.status_code}: {resp.text}")
         return None
     data = resp.json()
+    if "errors" in data:
+        print(f"⚠️  GraphQL errors: {data['errors']}")
+        return None
     try:
         weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
     except (KeyError, TypeError):
@@ -174,18 +194,19 @@ if real_data:
     months = list(real_data.keys())
     commits = list(real_data.values())
 else:
-    # fallback: date exemplu, doar dacă nu există token
-    months = [f"2025-{m:02d}" for m in range(1, 13)]
+    # fallback: date exemplu, doar daca nu exista token sau query-ul a esuat
+    current_year = datetime.date.today().year
+    months = [f"{current_year}-{m:02d}" for m in range(1, 13)]
     commits = [5, 7, 10, 4, 8, 12, 9, 11, 6, 7, 10, 8]
 
 fig, ax = plt.subplots(figsize=(10, 4.5))
 ax.plot(months, commits, marker="o", color=ACCENT_GREEN, linewidth=2.5,
         markersize=7, markerfacecolor="white", markeredgecolor=ACCENT_GREEN, markeredgewidth=2)
 ax.fill_between(range(len(months)), commits, color=ACCENT_GREEN, alpha=0.12)
-style_ax(ax, "📈 Commits per Month" + ("" if real_data else " (sample data)"))
+style_ax(ax, "Commits per Month" + ("" if real_data else " (sample data)"))
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.savefig(f"{OUTPUT_DIR}/commits_per_month.png", dpi=150)
 plt.close()
 
-print("✅ Grafice generate în:", OUTPUT_DIR)
+print("✅ Grafice generate in:", OUTPUT_DIR)
