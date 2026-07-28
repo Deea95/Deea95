@@ -7,7 +7,7 @@ from collections import Counter
 import datetime
 
 USERNAME = "Deea95"
-OUTPUT_DIR = "../.github/stats"
+OUTPUT_DIR = ".github/stats"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Optional: pune-ți un GitHub token în variabila de mediu GH_TOKEN
