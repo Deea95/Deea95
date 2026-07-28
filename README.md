@@ -54,9 +54,7 @@
 
 ## 🏆 Achievements
 
-<p align="center">
-  <img src="https://github-profile-trophy-liard-delta.vercel.app/?username=Deea95&theme=tokyonight&no-frame=true&row=1&column=6"/>
-</p>
+<img src="https://github-profile-trophy-fork-two.vercel.app/?username=Deea95&theme=tokyonight&no-frame=true&row=1&column=6"/>
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Deea95&theme=tokyonight"/>
