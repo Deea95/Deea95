@@ -5,6 +5,9 @@ on:
     - cron: '0 2 * * *' # zilnic la 02:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -23,6 +26,13 @@ jobs:
 
       - name: Generate stats
         run: python scripts/generate_stats.py
+
+      - name: Generate trophy
+        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+        with:
+          username: Deea95
+          output_path: .github/stats/trophy.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit stats
         run: |
