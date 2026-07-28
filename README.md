@@ -28,13 +28,19 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Deea95&show_icons=true&theme=tokyonight&hide_border=true" height="160"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Deea95&layout=compact&theme=tokyonight&hide_border=true" height="160"/>
+  <img src=".github/stats/top_languages.png" width="48%"/>
+  <img src=".github/stats/top_repos.png" width="48%"/>
+</p>
+
+<p align="center">
+  <img src=".github/stats/commits_per_month.png" width="80%"/>
 </p>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=Deea95&theme=tokyonight&hide_border=true" height="160"/>
 </p>
+
+> 🔄 Graficele de mai sus sunt generate automat de <code>generate_stats.py</code> — actualizează-le local sau printr-un GitHub Action ca să rămână la zi.
 
 ---
 
