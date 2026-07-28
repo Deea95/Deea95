@@ -8,6 +8,8 @@ on:
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,19 +17,18 @@ jobs:
       - name: Ensure images directory
         run: mkdir -p .github/stats
 
-      # Poți adăuga script pentru grafice PNG (optional)
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '18'
+          python-version: '3.11'
 
-      - name: Install dependencies (optional)
-        run: |
-          if [ -f package.json ]; then npm ci; fi
+      - name: Install dependencies
+        run: pip install requests matplotlib
 
-      - name: Run stats generation script (optional)
-        run: |
-          echo "Adaugă scriptul tău aici pentru generarea PNG-urilor și le pune în .github/stats/"
+      - name: Run stats generation script
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_stats.py
 
       - name: Commit generated assets (if any)
         run: |
