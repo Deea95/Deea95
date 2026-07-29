@@ -141,6 +141,54 @@ else:
     print("⚠️  Niciun repo gasit — se sare peste top_repos.png")
 
 # ---------------------------------------------------------------
+# 🏆 Stat card (inlocuieste trophy-ul extern): repos, stele, followers
+# ---------------------------------------------------------------
+def get_user_profile(username, headers):
+    resp = requests.get(f"https://api.github.com/users/{username}", headers=headers)
+    if resp.status_code != 200:
+        print(f"⚠️  Nu am putut lua profilul userului ({resp.status_code}): {resp.text}")
+        return None
+    return resp.json()
+
+
+user_profile = get_user_profile(USERNAME, HEADERS)
+
+total_repos = user_profile["public_repos"] if user_profile else len(repos)
+total_stars = sum(r.get("stargazers_count", 0) for r in repos)
+total_followers = user_profile["followers"] if user_profile else 0
+total_forks = sum(r.get("forks_count", 0) for r in repos)
+
+stats_data = [
+    ("Repos", total_repos, ACCENT_PURPLE),
+    ("Stele", total_stars, ACCENT_BLUE),
+    ("Followers", total_followers, ACCENT_GREEN),
+    ("Forks", total_forks, "#f778ba"),
+]
+
+fig, ax = plt.subplots(figsize=(10, 3))
+ax.set_xlim(0, len(stats_data))
+ax.set_ylim(0, 1)
+ax.axis("off")
+
+for i, (label, value, color) in enumerate(stats_data):
+    ax.add_patch(FancyBboxPatch(
+        (i + 0.06, 0.08), 0.88, 0.84,
+        boxstyle="round,pad=0,rounding_size=0.06",
+        linewidth=1.4, edgecolor=GRID_COLOR, facecolor=PANEL_COLOR,
+        mutation_aspect=1
+    ))
+    ax.text(i + 0.5, 0.58, f"{value:,}".replace(",", "."), ha="center", va="center",
+            fontsize=26, fontweight="bold", color=color)
+    ax.text(i + 0.5, 0.24, label, ha="center", va="center",
+            fontsize=12, color=TEXT_COLOR)
+
+fig.suptitle(f"@{USERNAME} — Profile Stats", color="white", fontsize=15,
+             fontweight="bold", x=0.03, ha="left", y=0.98)
+plt.tight_layout(rect=[0, 0, 1, 0.9])
+plt.savefig(f"{OUTPUT_DIR}/profile_stats.png", dpi=150)
+plt.close()
+
+# ---------------------------------------------------------------
 # 📈 Commits per month
 # ---------------------------------------------------------------
 def get_real_commit_counts(username, token):
