@@ -25,16 +25,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate trophy
-        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
-        with:
-          username: Deea95
-          file: .github/stats/trophy.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # Daca tot primesti "Failed to fetch user info" dupa acest fix,
-          # inlocuieste linia de mai sus cu un PAT dedicat (scope read:user):
-          # token: ${{ secrets.TROPHY_TOKEN }}
-
       - name: Commit stats
         run: |
           git config user.name "github-actions[bot]"
